@@ -15,7 +15,7 @@ const Maintanence = () => {
         <div>If you want to know about me...</div>
         <a  target="_blank"
             rel="noreferrer"
-            href="https://drive.google.com/file/d/14DhWBHZld4MhYq1TucMwin5zUg9Stbkr/view?usp=drive_link" className="cvBtn">
+            href="https://drive.google.com/file/d/1z9ma8mwmDFCwlmFvoo-XKKd3KQdUC17T/view?usp=sharing" className="cvBtn">
           <span className="contactButtonText">Here's My CV</span>
         </a>
       </div>
