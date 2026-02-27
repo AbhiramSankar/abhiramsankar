@@ -1,5 +1,5 @@
 # ABHIRAM SANKAR - PORTFOLIO
-![React](https://img.shields.io/badge/React-18+-20232A?style=flat-square&logo=react)
+![React](https://img.shields.io/badge/React-19+-20232A?style=flat-square&logo=react)
 ![Vite](https://img.shields.io/badge/Vite-5+-646CFF?style=flat-square&logo=vite)
 ![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=flat-square&logo=vercel)
 ![License](https://img.shields.io/github/license/AbhiramSankar/abhiramsankar?style=flat-square)
@@ -94,6 +94,13 @@ The following sections are currently under active development and expansion:
 - Contact
 
 Additional content and projects will be added soon.
+
+---
+
+## CONTACT
+- LinkedIn: https://www.linkedin.com/in/abhiram-sankar/
+- GitHub: https://github.com/AbhiramSankar
+- Email: abhisan.work@gmail.com
 
 ---
 
