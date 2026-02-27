@@ -1,7 +1,8 @@
+import ComingSoon from '../ComingSoon';
 import './index.scss'
 
 const Work = () => {
-  return <>Coming Soon</>;
+  return <><ComingSoon/></>;
 }
 
 export default Work
