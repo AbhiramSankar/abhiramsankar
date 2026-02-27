@@ -1,16 +1,43 @@
-# React + Vite
+# ABHIRAM SANKAR - PORTFOLIO
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Thank you for taking the time to review my portfolio.
 
-Currently, two official plugins are available:
+This portfolio showcases my work as a Software Developer with experience in full-stack web development, interactive applications, and game development.
+Live Site: [your-domain.com]  
+Resume: [Link]  
+Portfolio PDF: [Link]
+--------------------------------------------------
+## WHAT YOU WILL FIND HERE
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Featured Projects**<br/>
+    A curated selection of projects demonstrating technical depth, clean architecture, and real-world problem solving.
 
-## React Compiler
+- **Resume**<br/>
+    A professional snapshot of my skills, experience, and education.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **PDF Portfolio**<br/>
+    A detailed breakdown of projects.
+--------------------------------------------------
+## PROJECT STATUS
 
-## Expanding the ESLint configuration
+This portfolio is continuously evolving.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The following sections are currently under active development and expansion:
+
+- About Me
+- Work
+- Contact
+
+Additional content and projects will be added soon.
+--------------------------------------------------
+## ACKNOWLEDGMENTS
+
+This project was inspired and partially guided by the excellent tutorial by Slobodan (Sloba) Gajic, published on freeCodeCamp’s YouTube channel.
+
+Tutorial Reference:
+https://www.youtube.com/watch?v=bmpI252DmiI
+
+--------------------------------------------------
+Thank you for visiting.
+
+© 2026 Abhiram Sankar
