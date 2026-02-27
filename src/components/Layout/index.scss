@@ -1,135 +1,147 @@
 @use '../../variables';
 
-.page {
-  min-width: 96%;
-  min-height: 100%;
-  left: 4%;
-  // overflow: scroll;
-  position: absolute;
-  // padding-left: min(2rem, 20vw);
-}
-
-.topTags {
-  top: 35px;
-  .topTagHTML {
-    margin-left: -20px;
-  }
-}
-
-.tags {
-  color: variables.$primary;
-  opacity: 0.6;
-  position: absolute;
-  bottom: 0;
-  left: 120px;
-  font-size: 18px;
-  font-family: variables.$quaternary_font;
-}
-
-.bottomTags {
-  bottom: 0;
-  .bottomTagHTML {
-    margin-left: -20px;
-  }
-}
-
-.container {
-  display: grid;
-  grid-auto-rows: minmax(75em, auto);
-  width: 100%;
-  will-change: contents;
+.rootContainer {
   height: 100%;
-  min-height: 566px;
-  // position: absolute;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  margin: 0 auto;
-  z-index: 1;
-  transform-style: preserve-3d;
-  animation: fadeIn 1s forwards;
-  animation-delay: 1s;
+  display: flex;
+  position: relative;
+  .page {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 100%;
+    .outletContainer {
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      transform-style: preserve-3d;
+      // animation-delay: 0.15s;
+      .container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+      }
+      &::before {
+        content: '<html>\a    <body>';
+        white-space: pre;
+        font-family: variables.$quaternary_font;
+        color: variables.$primary;
+        font-size: 20px;
+        opacity: 0.6;
+        position: absolute;
+        margin-top: 20px;
+        line-height: 35px;
+        left: 35px;
+        padding-left: min(2rem, 20vw);
+      }
 
-  &::before {
-    content: '<html>\a    <body>';
-    white-space: pre;
-    font-family: variables.$quaternary_font;
-    color: variables.$primary;
-    font-size: 20px;
-    opacity: 0.6;
-    position: absolute;
-    margin-top: 20px;
-    line-height: 35px;
-    left: 35px;
-  padding-left: min(2rem, 20vw);
-  }
-}
+      &.tagThemeRed {
+        &::after {
+          content: '    </body>\a<html>';
+          white-space: pre;
+          font-family: variables.$quaternary_font;
+          color: variables.$primary;
+          font-size: 20px;
+          line-height: 35px;
+          opacity: 0.6;
+          position: absolute;
+          left: 35px;
+          bottom: 20px;
+          /* margin-top: -43px; */
+          // margin-left: 20px;
+          // animation: fadeIn 1s 1.7s backwards;
+          padding-left: min(2rem, 20vw);
+        }
+      }
 
-.tagThemeRed {
-  &::after {
-    content: '    </body>\a<html>';
-    white-space: pre;
-    font-family: variables.$quaternary_font;
-    color: variables.$primary;
-    font-size: 20px;
-    line-height: 35px;
-    opacity: 0.6;
-    position: absolute;
-    left: 15px;
-    bottom: 40px;
-    /* margin-top: -43px; */
-    margin-left: 20px;
-    animation: fadeIn 1s 1.7s backwards;
-  padding-left: min(2rem, 20vw);
-
-  }
-}
-
-.tagThemeWhite {
-  &::after {
-    content: '    </body>\a<html>';
-    white-space: pre;
-    font-family: variables.$quaternary_font;
-    color: variables.$tertiary;
-    font-size: 20px;
-    line-height: 35px;
-    opacity: 0.6;
-    position: absolute;
-    left: 15px;
-    bottom: 40px;
-    /* margin-top: -43px; */
-    margin-left: 20px;
-    animation: fadeIn 1s 1.7s backwards;
-  padding-left: min(2rem, 20vw);
-
+      &.tagThemeWhite {
+        &::after {
+          content: '    </body>\a<html>';
+          white-space: pre;
+          font-family: variables.$quaternary_font;
+          color: variables.$tertiary;
+          font-size: 20px;
+          line-height: 35px;
+          opacity: 0.6;
+          position: absolute;
+          left: 35px;
+          bottom: 20px;
+          /* margin-top: -43px; */
+          // margin-left: 20px;
+          // animation: fadeIn 1s 1.7s backwards;
+          padding-left: min(2rem, 20vw);
+        }
+      }
+    }
   }
 }
 
 @media screen and (max-width: 800px) {
-  .page {
-    position: relative;
-    margin: 0;
-    left: 0;
-    top: 75px;
-    width: auto;
-    padding-left: 0;
-  }
-  .container {
-    position: initial;
-    height: auto;
-    min-height: auto;
-    margin: 0;
-    margin-top: 5%;
-    &::before {
-      content: '<html>\a  <body>';
-      margin: 0;
-      left: 5px;
-    }
-    &::after {
-      content: '  </body>\a</html>';
-      margin: 0;
-      left: 5px;
+  .rootContainer {
+    flex-direction: column;
+    .page {
+      .outletContainer {
+        &::before {
+          content: '<html>\a    <body>';
+          margin-top: 20px;
+          left: 5px;
+          padding-left: min(2rem, 20vw);
+        }
+
+        &.tagThemeRed {
+          &::after {
+            left: 5px;
+            bottom: 20px;
+            padding-left: min(2rem, 20vw);
+          }
+        }
+
+        &.tagThemeWhite {
+          &::after {
+            content: '    </body>\a<html>';
+            left: 5px;
+            bottom: 20px;
+            padding-left: min(2rem, 20vw);
+          }
+        }
+      }
     }
   }
 }
 
+@media screen and (orientation: landscape) and (max-height: 750px) {
+  .rootContainer {
+    .page {
+      .outletContainer {
+        &::before {
+          content: '<html>\a    <body>';
+          margin-top: 0px;
+          left: 0px;
+          padding-left: min(2rem, 20vw);
+          line-height: 20px;
+        }
+
+        &.tagThemeRed {
+          &::after {
+            left: 0px;
+            bottom: 0px;
+            padding-left: min(2rem, 20vw);
+            line-height: 20px;
+          }
+        }
+
+        &.tagThemeWhite {
+          &::after {
+            content: '    </body>\a<html>';
+            left: 5px;
+            bottom: 20px;
+            padding-left: min(2rem, 20vw);
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
