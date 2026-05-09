@@ -85,7 +85,7 @@ const Home = () => {
               <span className="buttonText">QUICK OVERVIEW</span>
             </Link>
             <Link
-              to="https://drive.google.com/file/d/13kNOWuaSS1KcN1q5dlTI-LqYbC8wwl-a/view?usp=sharing"
+              to="https://drive.google.com/file/d/1SHSxkKDgMHI54W9rFmT8raK2xoxK_bW_/view?usp=sharing"
               className="button"
             >
               <FontAwesomeIcon icon={faFilePdf} />

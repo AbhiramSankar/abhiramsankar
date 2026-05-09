@@ -47,7 +47,7 @@ const ComingSoon = () => {
                 <FontAwesomeIcon icon={faFileLines} />
                 <span className="buttonText">QUICK OVERVIEW</span>
               </Link>
-              <Link to="https://drive.google.com/file/d/13kNOWuaSS1KcN1q5dlTI-LqYbC8wwl-a/view?usp=sharing" className="button">
+              <Link to="https://drive.google.com/file/d/1SHSxkKDgMHI54W9rFmT8raK2xoxK_bW_/view?usp=sharing" className="button">
                 <FontAwesomeIcon icon={faFilePdf} />
                 <span className="buttonText">VIEW FULL CV</span>
               </Link>
