@@ -43,11 +43,11 @@ const ComingSoon = () => {
                 <FontAwesomeIcon icon={faUser} />
                 <span className="buttonText">MORE ABOUT ME</span>
               </Link> */}
-              <Link to="https://drive.google.com/file/d/1k1nCtfcvkcDfCVEcozWQf7oD3_apq6jt/view?usp=sharing" className="button">
+              <Link to="https://drive.google.com/file/d/1jkeKmpAYfCwkLRUQpkhisGjvesT8Pmed/view?usp=sharing" className="button">
                 <FontAwesomeIcon icon={faFileLines} />
                 <span className="buttonText">QUICK OVERVIEW</span>
               </Link>
-              <Link to="https://drive.google.com/file/d/1SHSxkKDgMHI54W9rFmT8raK2xoxK_bW_/view?usp=sharing" className="button">
+              <Link to="https://drive.google.com/file/d/1GvY2gYy4T-37csHoCPM1Gk9pMBDUWrfX/view?usp=sharing" className="button">
                 <FontAwesomeIcon icon={faFilePdf} />
                 <span className="buttonText">VIEW FULL CV</span>
               </Link>
