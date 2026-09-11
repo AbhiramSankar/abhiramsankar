@@ -1,10 +1,10 @@
 import { create } from 'zustand'
 
+const CONSTRUCTION_PWD = import.meta.env.VITE_CONSTRUCTION_PWD;
+
 const initialState = {
   isLoading: true,
   isConstruction: true,
-  constructionPage: ["about-me", "my-work", "contact-me"],
-  contsructionPwd: "ASD1205for@Construction",
   sectionCount: {
     "/": 1,
     "/about-me": 1,
@@ -16,4 +16,8 @@ const initialState = {
 export const useUIStore = create((set) => ({
   ...initialState,
   setLoading: (loadBool) => set({ isLoading: loadBool }),
+  setConstruction: (pwd) => {
+    const constBool = pwd === CONSTRUCTION_PWD;
+    set({isConstruction: !constBool})
+  }
 }))
