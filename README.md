@@ -14,7 +14,7 @@ This portfolio showcases my work as a Software Developer with experience in full
 
 - Live Site: https://abhiramsankar.vercel.app/
 - Resume: https://drive.google.com/file/d/1k1nCtfcvkcDfCVEcozWQf7oD3_apq6jt/view?usp=sharing
-- Portfolio PDF: https://drive.google.com/file/d/1SHSxkKDgMHI54W9rFmT8raK2xoxK_bW_/view?usp=sharing
+- Portfolio PDF: https://drive.google.com/file/d/1GvY2gYy4T-37csHoCPM1Gk9pMBDUWrfX/view?usp=drive_link
 
 ---
 
