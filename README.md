@@ -13,7 +13,7 @@ Thank you for taking the time to review my portfolio.
 This portfolio showcases my work as a Software Developer with experience in full-stack web development, interactive applications, and game development.
 
 - Live Site: https://abhiramsankar.vercel.app/
-- Resume: https://drive.google.com/file/d/1k1nCtfcvkcDfCVEcozWQf7oD3_apq6jt/view?usp=sharing
+- Resume: https://drive.google.com/file/d/13F5uY-9ePlgulioe6iNGgbepZw855NP3/view
 - Portfolio PDF: https://drive.google.com/file/d/1Iv0_vxbgXiXcCd8zwVBjgmNeJjm33zX-/view?usp=sharing
 
 ---
