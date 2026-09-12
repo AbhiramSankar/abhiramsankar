@@ -208,13 +208,15 @@
       // }
     }
   }
-  .notFoundIcon {
-    color: variables.$primary;
-    opacity: 0.9;
-    flex: 1;
-    animation: fadeIn 3s timing-linear 5s both;
-    width: clamp(180px, 22vw, 420px);
-    height: auto;
+  .notFoundIconWrapper {
+    .notFoundIcon {
+      color: variables.$primary;
+      opacity: 0.9;
+      flex: 1;
+      animation: fadeIn 3s timing-linear 5s both;
+      width: clamp(180px, 22vw, 420px);
+      height: auto;
+    }
   }
 }
 
@@ -242,12 +244,19 @@
         }
       }
     }
-    .notFoundIcon {
+    .notFoundIconWrapper {
       position: absolute;
-      color: variables.$primary;
-      opacity: 0.25;
-      width: 90%;
-      height: auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .notFoundIcon {
+        position: relative;
+        color: variables.$primary;
+        opacity: 0.25;
+        width: 90%;
+        height: auto;
+      }
     }
   }
 }
@@ -308,12 +317,14 @@
         }
       }
     }
-    .notFoundIcon {
-      position: absolute;
-      color: variables.$primary;
-      opacity: 0.25;
-      width: 50%;
-      height: auto;
+    .notFoundIconWrapper {
+      .notFoundIcon {
+        position: absolute;
+        color: variables.$primary;
+        opacity: 0.25;
+        width: 50%;
+        height: auto;
+      }
     }
   }
 }

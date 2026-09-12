@@ -16,7 +16,7 @@ const NotFound = () => {
   const [letterClass, setLetterClass] = useState('textAnimate')
   const notFound1Array = '404'.split('')
   const notFound2Array = ' - '.split('')
-  const notFound3Array = 'Not'.split('')
+  const notFound3Array = 'Not '.split('')
   const notFound4Array = 'Found'.split('')
 
   const resumeLink = useUIStore((state) => state.resumeLink)
@@ -99,7 +99,12 @@ const NotFound = () => {
           </a> */}
         </div>
       </div>
-      <FontAwesomeIcon icon={faExclamationTriangle} className="notFoundIcon" />
+      <div className="notFoundIconWrapper">
+        <FontAwesomeIcon
+          icon={faExclamationTriangle}
+          className="notFoundIcon"
+        />
+      </div>
     </div>
   )
 }

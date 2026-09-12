@@ -4,7 +4,7 @@ import {
   faFileLines,
   faFilePdf,
   faHome,
-  faLaptopCode,
+  faPersonDigging,
 } from '@fortawesome/free-solid-svg-icons'
 import AnimatedLetters from '../UI/AnimatedLetters'
 import { useEffect, useState } from 'react'
@@ -94,7 +94,9 @@ const ComingSoon = () => {
                   </a> */}
         </div>
       </div>
-      <FontAwesomeIcon icon={faLaptopCode} className="comingSoonIcon" />
+      <div className="comingSoonIconWrapper">
+        <FontAwesomeIcon icon={faPersonDigging} className="comingSoonIcon" />
+      </div>
     </div>
   )
 }
