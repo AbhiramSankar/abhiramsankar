@@ -1,5 +1,5 @@
 import './index.scss'
-import LogoAS from '../../assets/img/logo6.png'
+import LogoAS from '../../../assets/img/logo6.png'
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import DrawSVGPlugin from 'gsap/DrawSVGPlugin'

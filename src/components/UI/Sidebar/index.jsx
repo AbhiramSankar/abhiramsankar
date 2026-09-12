@@ -1,8 +1,8 @@
 import './index.scss'
 
 import { Link, NavLink } from 'react-router-dom'
-import LogoAS from '../../assets/img/logo6.png'
-import SubLogo from '../../assets/img/SubLogo.png'
+import LogoAS from '../../../assets/img/logo6.png'
+import SubLogo from '../../../assets/img/SubLogo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faBars,

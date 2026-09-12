@@ -1,5 +1,5 @@
-import { useUIStore } from '../../store/ui'
-import LogoAS from '../../assets/img/logo6.png'
+import { useUIStore } from '../../../store/ui'
+import LogoAS from '../../../assets/img/logo6.png'
 import './index.scss'
 
 const Loader = () => {

@@ -1,9 +1,9 @@
 import { Outlet, useLocation } from 'react-router-dom'
-import Sidebar from '../Sidebar'
+import Sidebar from '../UI/Sidebar'
 import './index.scss'
 import { useEffect, useState } from 'react'
 import { useUIStore } from '../../store/ui'
-import Loader from '../Loader'
+import Loader from '../UI/Loader'
 
 const EXIT_MS = 1500
 

@@ -3,9 +3,9 @@ import LogoA from '../../assets/img/LogoA.png'
 import LogoS from '../../assets/img/LogoS.png'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import AnimatedLetters from '../AnimatedLetters'
-import Logo from '../Logo'
-// import { useSelector } from 'react-redux'
+import AnimatedLetters from '../UI/AnimatedLetters'
+import Logo from '../UI/Logo'
+import { useUIStore } from '../../store/ui'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faEnvelope,
@@ -22,6 +22,9 @@ const Home = () => {
   const firstNameArray = 'bhiram'.split('') //['b', 'h', 'i', 'r', 'a', 'm']
   const lastNameArray = 'ankar,'.split('') //['a', 'n', 'k', 'a', 'r', ',']
   const jobArray = 'Full-Stack Developer.'.split('')
+
+  const resumeLink = useUIStore((state) => state.resumeLink)
+  const portfolioLink = useUIStore((state) => state.portfolioLink)
 
   useEffect(() => {
     setTimeout(() => {
@@ -73,28 +76,42 @@ const Home = () => {
             Bachelor’s — National Institute of Technology Puducherry
           </h2>
           <div className="homeButtons">
-            {/* <Link to="/about-me" className="button">
-                <FontAwesomeIcon icon={faUser} />
-                <span className="buttonText">MORE ABOUT ME</span>
-              </Link> */}
-            <Link
-              to="https://drive.google.com/file/d/1jkeKmpAYfCwkLRUQpkhisGjvesT8Pmed/view?usp=sharing"
+            {/* <a
+            to="/about-me"
+            className="button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faUser} />
+            <span className="buttonText">MORE ABOUT ME</span>
+          </a> */}
+            <a
+              to={resumeLink}
               className="button"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FontAwesomeIcon icon={faFileLines} />
               <span className="buttonText">QUICK OVERVIEW</span>
-            </Link>
-            <Link
-              to="https://drive.google.com/file/d/1GvY2gYy4T-37csHoCPM1Gk9pMBDUWrfX/view?usp=drive_link"
+            </a>
+            <a
+              to={portfolioLink}
               className="button"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FontAwesomeIcon icon={faFilePdf} />
               <span className="buttonText">VIEW FULL CV</span>
-            </Link>
-            {/* <Link to="/contact-me" className="button">
-                <FontAwesomeIcon icon={faEnvelope} />
-                <span className="buttonText">CONTACT ME</span>
-              </Link> */}
+            </a>
+            {/* <a
+            to="/contact-me"
+            className="button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faEnvelope} />
+            <span className="buttonText">CONTACT ME</span>
+          </a> */}
           </div>
         </div>
         <Logo />
