@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './index.scss'
 import {
+  faExclamationTriangle,
   faFileLines,
   faFilePdf,
   faHome,
@@ -11,10 +12,12 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useUIStore } from '../../store/ui'
 
-const ComingSoon = () => {
+const NotFound = () => {
   const [letterClass, setLetterClass] = useState('textAnimate')
-  const comingSoon1Array = 'Under '.split('')
-  const comingSoon2Array = 'Development'.split('')
+  const notFound1Array = '404'.split('')
+  const notFound2Array = ' - '.split('')
+  const notFound3Array = 'Not'.split('')
+  const notFound4Array = 'Found'.split('')
 
   const resumeLink = useUIStore((state) => state.resumeLink)
   const portfolioLink = useUIStore((state) => state.portfolioLink)
@@ -30,29 +33,31 @@ const ComingSoon = () => {
         <h1>
           <AnimatedLetters
             letterClass={letterClass}
-            strArray={comingSoon1Array}
+            strArray={notFound1Array}
             index={5}
           />
-          {/* <br/> */}
           <AnimatedLetters
             letterClass={letterClass}
-            strArray={comingSoon2Array}
+            strArray={notFound2Array}
+            index={5}
+          />
+          <AnimatedLetters
+            letterClass={letterClass}
+            strArray={notFound3Array}
+            index={5}
+          />
+          <AnimatedLetters
+            letterClass={letterClass}
+            strArray={notFound4Array}
             index={5}
           />
         </h1>
         <div className="sectionP">
-          <p>Thanks for stopping by!</p>
-
-          <p>This page is still under construction.</p>
-
+          <p>How did you end up getting here?</p>
+          <p>Looks like you've wandered somewhere that doesn't exist.</p>
           <p>
-            I'm currently building, testing, and refining this section of my
-            portfolio.
-          </p>
-
-          <p>
-            In the meantime, you can head back home or check out my resume and
-            full CV to explore more of my work and experience.
+            You can head back home, or check out my resume and full CV to learn
+            more about my work and experience.
           </p>
         </div>
         <div className="homeButtons">
@@ -84,19 +89,19 @@ const ComingSoon = () => {
             <span className="buttonText">VIEW FULL CV</span>
           </a>
           {/* <a
-                    to="/contact-me"
-                    className="button"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FontAwesomeIcon icon={faEnvelope} />
-                    <span className="buttonText">CONTACT ME</span>
-                  </a> */}
+            to="/contact-me"
+            className="button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faEnvelope} />
+            <span className="buttonText">CONTACT ME</span>
+          </a> */}
         </div>
       </div>
-      <FontAwesomeIcon icon={faLaptopCode} className="comingSoonIcon" />
+      <FontAwesomeIcon icon={faExclamationTriangle} className="notFoundIcon" />
     </div>
   )
 }
 
-export default ComingSoon
+export default NotFound

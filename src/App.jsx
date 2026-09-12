@@ -6,6 +6,7 @@ import Home from './components/Home'
 import About from './components/About'
 import Work from './components/Work'
 import Contact from './components/Contact'
+import NotFound from './components/NotFound'
 
 function App() {
   return (
@@ -13,9 +14,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path='about-me' element={<About />} />
-          <Route path='my-work' element={<Work />} />
-          <Route path='contact-me' element={<Contact />} />
+          <Route path="about-me" element={<About />} />
+          <Route path="my-work" element={<Work />} />
+          <Route path="contact-me" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </>

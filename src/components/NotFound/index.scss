@@ -1,0 +1,319 @@
+@use '../../variables';
+
+.comingSoon {
+  position: relative;
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5em;
+  .textZone {
+    min-width: 40%;
+    max-width: 90%;
+    z-index: 1;
+    flex: 1;
+    h1 {
+      color: variables.$primary;
+      font-size: clamp(3.5rem, 3.5vw - 3.5rem, 7rem);
+      margin: 0;
+      font-family: variables.$secondary_font;
+      font-weight: 400;
+      margin-bottom: 75px;
+      letter-spacing: 0.5rem;
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      &span {
+        display: inline-block;
+      }
+      &::before {
+        content: '<h1>';
+        font-family: variables.$quaternary_font;
+        color: variables.$primary;
+        font-size: 24px;
+        opacity: 0.6;
+        position: absolute;
+        margin-top: -30px;
+        left: -15px;
+      }
+      &::after {
+        content: '</h1>';
+        font-family: variables.$quaternary_font;
+        color: variables.$primary;
+        font-size: 25px;
+        opacity: 0.6;
+        position: absolute;
+        // margin-top: 60px;
+        bottom: -30px;
+        left: -15px;
+        // animation: fadeIn 1s 1.7s backwards;
+      }
+      .textAnimateHover {
+        &:hover {
+          color: variables.$tertiary;
+        }
+      }
+    }
+    .sectionP {
+      position: relative;
+      margin-left: 5%;
+      p {
+        font-size: 16px;
+        color: variables.$tertiary;
+        font-family: variables.$tertiary_font;
+        font-weight: 300;
+        min-width: fit-content;
+        opacity: 0;
+        animation: fadeInDown;
+        animation-duration: 1.5s;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+        &:nth-of-type(1) {
+          animation-delay: 1.6s;
+        }
+
+        &:nth-of-type(2) {
+          animation-delay: 1.7s;
+        }
+
+        &:nth-of-type(3) {
+          animation-delay: 1.8s;
+        }
+      }
+      &::before {
+        content: '<p>';
+        font-family: variables.$quaternary_font;
+        color: variables.$primary;
+        font-size: 16px;
+        opacity: 0.6;
+        position: absolute;
+        margin-top: -30px;
+        left: -15px;
+        animation: fadeIn 1s 1.7s backwards;
+      }
+      &::after {
+        content: '</p>';
+        font-family: variables.$quaternary_font;
+        color: variables.$primary;
+        font-size: 16px;
+        opacity: 0.6;
+        position: absolute;
+        // margin-top: 60px;
+        bottom: -30px;
+        left: -15px;
+        animation: fadeIn 1s 1.7s backwards;
+      }
+    }
+    .homeButtons {
+      display: flex;
+      gap: 1rem;
+      overflow: hidden;
+      margin-top: 5rem;
+      gap: 2.5rem;
+      .button {
+        display: flex;
+        height: 4rem;
+        width: 10rem;
+        border: 2px solid variables.$primary;
+        border-radius: 25px;
+        color: variables.$primary;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s;
+        position: relative;
+        overflow: hidden;
+        svg {
+          font-size: 1.5rem;
+          transform: translateX(0);
+          transition: all 0.5s;
+        }
+        .buttonText {
+          display: inline-block;
+          position: absolute;
+          width: max-content;
+          transform: translateX(6rem);
+          opacity: 0;
+          transition: all 0.5s;
+          margin: 0;
+          padding: 0 5px;
+        }
+        &:hover {
+          width: 17rem;
+          background-color: variables.$primary;
+          color: variables.$tertiary;
+          svg {
+            transform: translateX(-6rem);
+          }
+          .buttonText {
+            // width: 15px;
+            opacity: 1;
+            transform: translateX(1.5rem);
+          }
+        }
+      }
+
+      // .contactButton {
+      //   display: inline-flex;
+      //   height: 4rem;
+      //   width: 10rem;
+      //   border: 2px solid variables.$primary;
+      //   border-radius: 25px;
+      //   color: variables.$primary;
+      //   text-transform: uppercase;
+      //   text-decoration: none;
+      //   font-size: 1em;
+      //   font-weight: 700;
+      //   letter-spacing: 1.5px;
+      //   align-items: center;
+      //   justify-content: center;
+      //   transition: all 0.5s;
+      //   position: relative;
+      //   overflow: hidden;
+      //   svg {
+      //     font-size: 1.5rem;
+      //     transform: translateX(0);
+      //     transition: all 0.5s;
+      //   }
+      //   .contactButtonText {
+      //     display: inline-block;
+      //     position: absolute;
+      //     width: max-content;
+      //     transform: translateX(6rem);
+      //     opacity: 0;
+      //     transition: all 0.5s;
+      //     margin: 0;
+      //     padding: 0 5px;
+      //   }
+      //   &:hover {
+      //     width: 17rem;
+      //     background-color: variables.$primary;
+      //     color: variables.$tertiary;
+      //     svg {
+      //       transform: translateX(-6rem);
+      //     }
+      //     .contactButtonText {
+      //       // width: 15px;
+      //       opacity: 1;
+      //       transform: translateX(1.5rem);
+      //     }
+      //   }
+      // }
+    }
+  }
+  .notFoundIcon {
+    color: variables.$primary;
+    opacity: 0.9;
+    flex: 1;
+    animation: fadeIn 3s timing-linear 5s both;
+    width: clamp(180px, 22vw, 420px);
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .comingSoon {
+    .textZone {
+      h1 {
+        font-size: clamp(2rem, 2vw - 2.5rem, 4rem);
+        letter-spacing: 2.25px;
+      }
+      .sectionP {
+        p {
+          font-size: 14px;
+        }
+      }
+      .homeButtons {
+        flex-wrap: wrap;
+        .button {
+          flex: 0 0 calc(50% - 2.5rem);
+        }
+        .button:nth-child(3) {
+          flex-basis: calc(50% - 2.5rem);
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+    .notFoundIcon {
+      position: absolute;
+      color: variables.$primary;
+      opacity: 0.25;
+      width: 90%;
+      height: auto;
+    }
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 750px) {
+  .comingSoon {
+    .textZone {
+      h1 {
+        font-size: clamp(2rem, 2vw - 2.5rem, 4rem);
+        letter-spacing: 2.25px;
+        margin-bottom: 35px;
+        &::before {
+          font-size: 20px;
+          margin-top: -20px;
+        }
+        &::after {
+          font-size: 20px;
+          bottom: -20px;
+        }
+      }
+      .sectionP {
+        p {
+          font-size: 12px;
+        }
+        &::before {
+          margin-top: -20px;
+        }
+        &::after {
+          bottom: -20px;
+        }
+      }
+      .homeButtons {
+        margin-top: 2.5rem;
+        .button {
+          height: 2rem;
+          width: 5rem;
+          border: 2px solid variables.$primary;
+          border-radius: 25px;
+          color: variables.$primary;
+          text-transform: uppercase;
+          text-decoration: none;
+          font-size: 0.75em;
+          svg {
+            font-size: 1rem;
+          }
+          &:hover {
+            width: 15rem;
+            background-color: variables.$primary;
+            color: variables.$tertiary;
+            svg {
+              transform: translateX(-6rem);
+            }
+            .buttonText {
+              // width: 15px;
+              opacity: 1;
+              transform: translateX(1.5rem);
+            }
+          }
+        }
+      }
+    }
+    .notFoundIcon {
+      position: absolute;
+      color: variables.$primary;
+      opacity: 0.25;
+      width: 50%;
+      height: auto;
+    }
+  }
+}
