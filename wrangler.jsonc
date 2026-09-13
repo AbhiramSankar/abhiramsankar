@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "abhiram-portfolio",
+  "name": "abhiramsankar",
   "compatibility_date": "2026-09-12",
 
   "assets": {
