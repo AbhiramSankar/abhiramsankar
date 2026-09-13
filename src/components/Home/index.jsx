@@ -21,7 +21,7 @@ const Home = () => {
   const iAmArray = "I'm".split('')
   const firstNameArray = 'bhiram'.split('') //['b', 'h', 'i', 'r', 'a', 'm']
   const lastNameArray = 'ankar,'.split('') //['a', 'n', 'k', 'a', 'r', ',']
-  const jobArray = 'Full-Stack Developer.'.split('')
+  const jobArray = 'Software Engineer'.split('')
 
   const resumeLink = useUIStore((state) => state.resumeLink)
   const portfolioLink = useUIStore((state) => state.portfolioLink)
