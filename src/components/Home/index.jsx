@@ -21,7 +21,7 @@ const Home = () => {
   const iAmArray = "I'm".split('')
   const firstNameArray = 'bhiram'.split('') //['b', 'h', 'i', 'r', 'a', 'm']
   const lastNameArray = 'ankar,'.split('') //['a', 'n', 'k', 'a', 'r', ',']
-  const jobArray = 'Software Engineer'.split('')
+  const jobArray = 'Full-Stack Developer.'.split('')
 
   const resumeLink = useUIStore((state) => state.resumeLink)
   const portfolioLink = useUIStore((state) => state.portfolioLink)
@@ -70,7 +70,10 @@ const Home = () => {
             </div>
           </h1>
           <h2>
-            Full Stack • Mobile • Game Development
+            Building web applications, <br />
+            with a growing focus on game development. | <br />
+            Master’s Graduate — Ontario Tech University | <br />
+            Bachelor’s — National Institute of Technology Puducherry
           </h2>
           <div className="homeButtons">
             {/* <a
