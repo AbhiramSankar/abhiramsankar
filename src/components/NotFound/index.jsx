@@ -28,7 +28,7 @@ const NotFound = () => {
     }, 5100)
   }, [])
   return (
-    <div className="comingSoon">
+    <div className="notFound">
       <div className="textZone">
         <h1>
           <AnimatedLetters

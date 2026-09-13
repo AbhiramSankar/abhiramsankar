@@ -43,11 +43,9 @@ const ComingSoon = () => {
         <div className="sectionP">
           <p>Thanks for stopping by!</p>
 
-          <p>This page is still under construction.</p>
-
           <p>
-            I'm currently building, testing, and refining this section of my
-            portfolio.
+            This page is still under construction. I'm currently building,
+            testing, and refining this section of my portfolio.
           </p>
 
           <p>

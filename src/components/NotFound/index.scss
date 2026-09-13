@@ -1,6 +1,6 @@
 @use '../../variables';
 
-.comingSoon {
+.notFound {
   position: relative;
   height: 100%;
   width: 80%;
@@ -221,7 +221,7 @@
 }
 
 @media screen and (max-width: 800px) {
-  .comingSoon {
+  .notFound {
     .textZone {
       h1 {
         font-size: clamp(2rem, 2vw - 2.5rem, 4rem);
@@ -261,18 +261,18 @@
   }
 }
 @media screen and (orientation: landscape) and (max-height: 750px) {
-  .comingSoon {
+  .notFound {
     .textZone {
       h1 {
-        font-size: clamp(2rem, 2vw - 2.5rem, 4rem);
+        font-size: clamp(1.75rem, 2vw - 2rem, 3rem);
         letter-spacing: 2.25px;
         margin-bottom: 35px;
         &::before {
-          font-size: 20px;
+          font-size: 16px;
           margin-top: -20px;
         }
         &::after {
-          font-size: 20px;
+          font-size: 16px;
           bottom: -20px;
         }
       }
@@ -288,10 +288,14 @@
         }
       }
       .homeButtons {
-        margin-top: 2.5rem;
+        margin-top: 2rem;
+        justify-content: center;
+        align-items: center;
+        gap: 2em !important;
         .button {
+          flex-basis: 15%;
           height: 2rem;
-          width: 5rem;
+          width: 3rem;
           border: 2px solid variables.$primary;
           border-radius: 25px;
           color: variables.$primary;
@@ -315,14 +319,24 @@
             }
           }
         }
+        .button:nth-child(3) {
+          flex-basis: 15%;
+          margin-left: 0;
+          margin-right: 0;
+        }
       }
     }
     .notFoundIconWrapper {
+      position: absolute;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       .notFoundIcon {
         position: absolute;
         color: variables.$primary;
         opacity: 0.25;
-        width: 50%;
+        width: 40%;
         height: auto;
       }
     }
