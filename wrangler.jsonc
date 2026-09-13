@@ -1,9 +1,19 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "abhiramsankar",
+  "name": "abhiram-portfolio",
   "compatibility_date": "2026-09-12",
 
   "assets": {
     "not_found_handling": "single-page-application"
+  },
+
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true,
+      "persist": true,
+      "head_sampling_rate": 1
+    }
   }
 }
