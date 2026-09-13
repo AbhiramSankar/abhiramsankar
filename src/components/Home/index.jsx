@@ -70,10 +70,7 @@ const Home = () => {
             </div>
           </h1>
           <h2>
-            Building web applications, <br />
-            with a growing focus on game development. | <br />
-            Master’s Graduate — Ontario Tech University | <br />
-            Bachelor’s — National Institute of Technology Puducherry
+            Full Stack • Mobile • Game Development
           </h2>
           <div className="homeButtons">
             {/* <a
