@@ -63,7 +63,7 @@
       p {
         font-size: 16px;
         color: variables.$tertiary;
-        font-family: variables.$tertiary_font;
+        font-size: clamp(0.75rem, 0.75vw + 1rem, 1.5rem);
         font-weight: 300;
         min-width: fit-content;
         opacity: 0;
@@ -218,6 +218,77 @@
       height: auto;
     }
   }
+  .maintanenceDevToggle {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+  }
+  .loginForm {
+    position: fixed;
+    z-index: 9999;
+    height: 100%;
+    width: 100%;
+    background-color: variables.$secondary_50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: auto;
+    opacity: 0;
+    form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 1.5em;
+      background-color: variables.$tertiary;
+      border-radius: 25px;
+      padding: 2.5em;
+
+      label {
+        color: variables.$primary;
+        text-transform: uppercase;
+        font-size: 1em;
+        font-weight: 700;
+      }
+      input {
+        border-radius: 25px;
+        padding: 0.25em;
+        border-color: variables.$primary;
+      }
+      button {
+        display: flex;
+        height: 4rem;
+        width: 10rem;
+        border: 2px solid variables.$primary;
+        border-radius: 25px;
+        color: variables.$primary;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s;
+        position: relative;
+        overflow: hidden;
+        &:hover {
+          background-color: variables.$primary;
+          color: variables.$tertiary;
+        }
+      }
+    }
+    &--open {
+      animation: loginFadeIn 0.3s ease forwards;
+    }
+
+    &--closing {
+      animation: loginFadeOut 0.3s ease forwards;
+    }
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -279,7 +350,7 @@
       }
       .sectionP {
         p {
-          font-size: 12px;
+          font-size: clamp(1rem, 1vw - 1rem, 2rem);
         }
         &::before {
           margin-top: -20px;
@@ -341,5 +412,29 @@
         height: auto;
       }
     }
+  }
+}
+
+@keyframes loginFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes loginFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
   }
 }

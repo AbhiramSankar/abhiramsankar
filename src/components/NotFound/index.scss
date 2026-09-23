@@ -61,7 +61,7 @@
       position: relative;
       margin-left: 5%;
       p {
-        font-size: 16px;
+        font-size: clamp(0.75rem, 0.75vw + 1rem, 1.5rem);
         color: variables.$tertiary;
         font-family: variables.$tertiary_font;
         font-weight: 300;
@@ -278,7 +278,7 @@
       }
       .sectionP {
         p {
-          font-size: 12px;
+          font-size: clamp(1rem, 1vw - 1rem, 2rem);
         }
         &::before {
           margin-top: -20px;

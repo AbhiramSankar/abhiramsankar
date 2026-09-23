@@ -4,6 +4,7 @@ import './index.scss'
 import { useEffect, useState } from 'react'
 import { useUIStore } from '../../store/ui'
 import Loader from '../UI/Loader'
+import { ToastContainer, toast, Slide } from 'react-toastify'
 
 const EXIT_MS = 1500
 
@@ -12,11 +13,52 @@ const Layout = () => {
 
   const isLoading = useUIStore((state) => state.isLoading)
   const setLoading = useUIStore((state) => state.setLoading)
+  const notifyContent = useUIStore((state) => state.notifyContent)
+  const setNotifyContent = useUIStore((state) => state.setNotifyContent)
   const sectionCount = useUIStore(
     (state) => state.sectionCount[location.pathname]
   )
 
   const [showOutlet, setShowOutlet] = useState(true)
+
+  const notify = (msg, type) => {
+    switch (type) {
+      case 'info':
+        toast.info(msg, {
+          onClose: () => {
+            setNotifyContent(false)
+          },
+        })
+        break
+      case 'success':
+        toast.success(msg, {
+          onClose: () => {
+            setNotifyContent(false)
+          },
+        })
+        break
+      case 'warn':
+        toast.warn(msg, {
+          onClose: () => {
+            setNotifyContent(false)
+          },
+        })
+        break
+      case 'error':
+        toast.error(msg, {
+          onClose: () => {
+            setNotifyContent(false)
+          },
+        })
+        break
+      default:
+        toast(msg, {
+          onClose: () => {
+            setNotifyContent(false)
+          },
+        })
+    }
+  }
 
   useEffect(() => {
     setShowOutlet(false)
@@ -36,6 +78,12 @@ const Layout = () => {
     }
   }, [location, setLoading])
 
+  useEffect(() => {
+    if (notifyContent) {
+      notify(notifyContent.msg, notifyContent.type)
+    }
+  }, [notifyContent])
+
   return (
     <div className="rootContainer">
       <Sidebar />
@@ -54,6 +102,20 @@ const Layout = () => {
           <Loader />
         )}
       </div>
+      <ToastContainer
+        className="notifyToast"
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        transition={Slide}
+      />
     </div>
   )
 }

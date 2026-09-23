@@ -3,7 +3,7 @@ import ComingSoon from '../ComingSoon';
 
 const About = () => {
   return <>
-    <ComingSoon />
+    <h1>About Me</h1>
   </>;
 }
 

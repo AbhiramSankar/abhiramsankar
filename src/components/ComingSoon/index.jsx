@@ -13,17 +13,75 @@ import { useUIStore } from '../../store/ui'
 
 const ComingSoon = () => {
   const [letterClass, setLetterClass] = useState('textAnimate')
+  const [showLogin, setShowLogin] = useState(false)
+  const [isClosing, setIsClosing] = useState(false)
+  const [pwd, setPwd] = useState('')
+  const [loginStatus, setLoginStatus] = useState(null)
+
   const comingSoon1Array = 'Under '.split('')
   const comingSoon2Array = 'Development'.split('')
 
   const resumeLink = useUIStore((state) => state.resumeLink)
   const portfolioLink = useUIStore((state) => state.portfolioLink)
+  const setNotifyContent = useUIStore((state) => state.setNotifyContent)
+  const unlockMaintenance = useUIStore((state) => state.unlockMaintenance)
 
   useEffect(() => {
     setTimeout(() => {
       setLetterClass('textAnimateHover')
     }, 5100)
   }, [])
+
+  useEffect(() => {
+    if (loginStatus) {
+      if (loginStatus.success) {
+        setNotifyContent({
+          msg: loginStatus.msg,
+          type: 'success',
+        })
+      } else {
+        setNotifyContent({
+          msg: loginStatus.msg,
+          type: 'error',
+        })
+      }
+    }
+  }, [loginStatus])
+
+  const toggleLogin = () => {
+    if (showLogin) {
+      setIsClosing(true)
+
+      setTimeout(() => {
+        setShowLogin(false)
+        setIsClosing(false)
+        setLoginStatus(null)
+      }, 300)
+    } else {
+      setShowLogin(true)
+      setIsClosing(false)
+    }
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    unlockMaintenance(pwd)
+      .then((res) => {
+        setLoginStatus(res)
+        toggleLogin()
+      })
+      .catch((e) => {
+        setLoginStatus(
+          e.response?.data || {
+            success: false,
+            msg: 'Something went wrong',
+          }
+        )
+        toggleLogin()
+      })
+  }
+
   return (
     <div className="comingSoon">
       <div className="textZone">
@@ -54,12 +112,7 @@ const ComingSoon = () => {
           </p>
         </div>
         <div className="homeButtons">
-          <Link
-            to="/"
-            className="button"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link to="/" className="button" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faHome} />
             <span className="buttonText">BACK TO HOME</span>
           </Link>
@@ -95,6 +148,28 @@ const ComingSoon = () => {
       <div className="comingSoonIconWrapper">
         <FontAwesomeIcon icon={faPersonDigging} className="comingSoonIcon" />
       </div>
+      <button className="maintanenceDevToggle" onClick={toggleLogin} />
+      {showLogin && (
+        <div
+          className={`loginForm ${
+            isClosing ? 'loginForm--closing' : 'loginForm--open'
+          }`}
+        >
+          <form onSubmit={handleSubmit}>
+            <label>Enter Maintanence Password</label>
+            <input
+              type="password"
+              value={pwd}
+              onChange={(e) => {
+                setPwd(e.target.value)
+                setLoginStatus(null)
+              }}
+              placeholder="Open Sesame?"
+            />
+            <button type="submit">Unlock</button>
+          </form>
+        </div>
+      )}
     </div>
   )
 }

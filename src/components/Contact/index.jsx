@@ -3,7 +3,7 @@ import ComingSoon from '../ComingSoon'
 
 const Contact = () => {
   return <>
-    <ComingSoon/>
+    <h1>Contact</h1>
   </>;
 }
 

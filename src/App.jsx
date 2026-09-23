@@ -7,16 +7,45 @@ import About from './components/About'
 import Work from './components/Work'
 import Contact from './components/Contact'
 import NotFound from './components/NotFound'
+import MaintenanceGate from './components/MaintenanceGate'
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about-me" element={<About />} />
-          <Route path="my-work" element={<Work />} />
-          <Route path="contact-me" element={<Contact />} />
+          <Route
+            index
+            element={
+              <MaintenanceGate page="home">
+                <Home />
+              </MaintenanceGate>
+            }
+          />
+          <Route
+            path="about-me"
+            element={
+              <MaintenanceGate page="about">
+                <About />
+              </MaintenanceGate>
+            }
+          />
+          <Route
+            path="my-work"
+            element={
+              <MaintenanceGate page="work">
+                <Work />
+              </MaintenanceGate>
+            }
+          />
+          <Route
+            path="contact-me"
+            element={
+              <MaintenanceGate page="contact">
+                <Contact />
+              </MaintenanceGate>
+            }
+          />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

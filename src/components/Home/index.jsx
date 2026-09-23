@@ -17,7 +17,7 @@ import {
 
 const Home = () => {
   const [letterClass, setLetterClass] = useState('textAnimate')
-  const helloArray = 'Hello.'.split('')
+  const helloArray = 'Hello. '.split('')
   const iAmArray = "I'm".split('')
   const firstNameArray = 'bhiram'.split('') //['b', 'h', 'i', 'r', 'a', 'm']
   const lastNameArray = 'ankar,'.split('') //['a', 'n', 'k', 'a', 'r', ',']
@@ -36,6 +36,7 @@ const Home = () => {
     <div className={`container`}>
       <section className="homePage">
         <div className="textZone">
+        <div className="textWrapper">
           <h1>
             {/* <span className={letterClass}>H</span> */}
             <AnimatedLetters
@@ -43,7 +44,7 @@ const Home = () => {
               strArray={helloArray}
               index={7}
             />
-            <br />
+            <br className='normalBreak'/>
             <AnimatedLetters
               letterClass={letterClass}
               strArray={iAmArray}
@@ -69,12 +70,11 @@ const Home = () => {
               />
             </div>
           </h1>
-          <h2>
-            Building web applications, <br />
-            with a growing focus on game development. | <br />
-            Master’s Graduate — Ontario Tech University | <br />
-            Bachelor’s — National Institute of Technology Puducherry
-          </h2>
+          <h2>Software Engineering • Web • Mobile • Game Development</h2>
+          <p>
+            I build production web and mobile applications and backend services, while exploring game development, interactive systems, and AI-integrated software — from concept to interface, APIs, and deployment.
+          </p>
+          </div>
           <div className="homeButtons">
             {/* <a
             to="/about-me"

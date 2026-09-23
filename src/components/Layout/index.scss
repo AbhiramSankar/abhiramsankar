@@ -76,6 +76,13 @@
       }
     }
   }
+  .notifyToast {
+    .Toastify__toast {
+      background: #0d1014;
+      font-family: variables.$secondary_font;
+      font-size: 1.25em;
+    }
+  }
 }
 
 @media screen and (max-width: 800px) {
