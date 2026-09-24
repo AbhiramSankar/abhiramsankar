@@ -29,7 +29,7 @@ const ComingSoon = () => {
   useEffect(() => {
     setTimeout(() => {
       setLetterClass('textAnimateHover')
-    }, 5100)
+    }, 2200)
   }, [])
 
   useEffect(() => {

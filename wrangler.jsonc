@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "abhiramsankar",
+  "name": "portfolio",
   "compatibility_date": "2026-09-12",
 
   "main": "./worker/index.js",
@@ -23,7 +23,7 @@
       "persist": true,
     },
     "traces": {
-      "enabled": false,
+      "enabled": true,
       "head_sampling_rate": 1,
       "persist": true,
     },

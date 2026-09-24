@@ -1,0 +1,218 @@
+@use '../../variables';
+
+.contact {
+  position: relative;
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5em;
+  .textZone {
+    min-width: 40%;
+    max-width: 90%;
+    z-index: 1;
+    flex: 1;
+    h1 {
+      color: variables.$primary;
+      font-size: clamp(3.5rem, 3.5vw - 3.5rem, 7rem);
+      margin: 0;
+      font-family: variables.$secondary_font;
+      font-weight: 400;
+      margin-bottom: 75px;
+      letter-spacing: 0.5rem;
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      &span {
+        display: inline-block;
+      }
+      &::before {
+        content: '<h1>';
+        font-family: variables.$quaternary_font;
+        color: variables.$primary;
+        font-size: 24px;
+        opacity: 0.6;
+        position: absolute;
+        margin-top: -30px;
+        left: -15px;
+      }
+      &::after {
+        content: '</h1>';
+        font-family: variables.$quaternary_font;
+        color: variables.$primary;
+        font-size: 25px;
+        opacity: 0.6;
+        position: absolute;
+        // margin-top: 60px;
+        bottom: -30px;
+        left: -15px;
+        // animation: fadeIn 1s 1.7s backwards;
+      }
+      .textAnimateHover {
+        &:hover {
+          color: variables.$tertiary;
+        }
+      }
+    }
+    .sectionP {
+      position: relative;
+      margin-left: 5%;
+      p {
+        font-size: clamp(0.75rem, 0.75vw + 1rem, 1.5rem);
+        color: variables.$tertiary;
+        font-family: variables.$tertiary_font;
+        font-weight: 300;
+        min-width: fit-content;
+        opacity: 0;
+        animation: fadeInDown;
+        animation-duration: 1.5s;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+        &:nth-of-type(1) {
+          animation-delay: 1.6s;
+        }
+
+        &:nth-of-type(2) {
+          animation-delay: 1.7s;
+        }
+
+        &:nth-of-type(3) {
+          animation-delay: 1.8s;
+        }
+      }
+      &::before {
+        content: '<p>';
+        font-family: variables.$quaternary_font;
+        color: variables.$primary;
+        font-size: 16px;
+        opacity: 0.6;
+        position: absolute;
+        margin-top: -30px;
+        left: -15px;
+        animation: fadeIn 1s 1.7s backwards;
+      }
+      &::after {
+        content: '</p>';
+        font-family: variables.$quaternary_font;
+        color: variables.$primary;
+        font-size: 16px;
+        opacity: 0.6;
+        position: absolute;
+        // margin-top: 60px;
+        bottom: -30px;
+        left: -15px;
+        animation: fadeIn 1s 1.7s backwards;
+      }
+    }
+    .contactForm {
+      margin-top: 5em;
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        button {
+          display: flex;
+          height: 4rem;
+          width: 10rem;
+          border: 2px solid variables.$primary;
+          border-radius: 25px;
+          color: variables.$primary;
+          text-transform: uppercase;
+          text-decoration: none;
+          font-size: 1em;
+          font-weight: 700;
+          letter-spacing: 1.5px;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.5s;
+          position: relative;
+          overflow: hidden;
+          svg {
+            font-size: 1.5rem;
+            transform: translateX(0);
+            transition: all 0.5s;
+          }
+          .buttonText {
+            display: inline-block;
+            position: absolute;
+            width: max-content;
+            transform: translateX(6rem);
+            opacity: 0;
+            transition: all 0.5s;
+            margin: 0;
+            padding: 0 5px;
+          }
+          &:hover {
+            width: 17rem;
+            background-color: variables.$primary;
+            color: variables.$tertiary;
+            svg {
+              transform: translateX(-6rem);
+            }
+            .buttonText {
+              // width: 15px;
+              opacity: 1;
+              transform: translateX(1.5rem);
+            }
+          }
+        }
+      }
+    }
+    .homeButtons {
+      display: flex;
+      gap: 1rem;
+      overflow: hidden;
+      margin-top: 5rem;
+      gap: 2.5rem;
+      .button {
+        display: flex;
+        height: 4rem;
+        width: 10rem;
+        border: 2px solid variables.$primary;
+        border-radius: 25px;
+        color: variables.$primary;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s;
+        position: relative;
+        overflow: hidden;
+        svg {
+          font-size: 1.5rem;
+          transform: translateX(0);
+          transition: all 0.5s;
+        }
+        .buttonText {
+          display: inline-block;
+          position: absolute;
+          width: max-content;
+          transform: translateX(6rem);
+          opacity: 0;
+          transition: all 0.5s;
+          margin: 0;
+          padding: 0 5px;
+        }
+        &:hover {
+          width: 17rem;
+          background-color: variables.$primary;
+          color: variables.$tertiary;
+          svg {
+            transform: translateX(-6rem);
+          }
+          .buttonText {
+            // width: 15px;
+            opacity: 1;
+            transform: translateX(1.5rem);
+          }
+        }
+      }
+    }
+  }
+}

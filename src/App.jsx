@@ -7,7 +7,7 @@ import About from './components/About'
 import Work from './components/Work'
 import Contact from './components/Contact'
 import NotFound from './components/NotFound'
-import MaintenanceGate from './components/MaintenanceGate'
+import MaintenanceGate from './components/UI/MaintenanceGate'
 
 function App() {
   return (

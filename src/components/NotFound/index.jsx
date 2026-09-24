@@ -25,7 +25,7 @@ const NotFound = () => {
   useEffect(() => {
     setTimeout(() => {
       setLetterClass('textAnimateHover')
-    }, 5100)
+    }, 2000)
   }, [])
   return (
     <div className="notFound">
