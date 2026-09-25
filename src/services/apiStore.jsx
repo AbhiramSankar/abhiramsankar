@@ -19,3 +19,14 @@ export const verifyMaintPwd = (pwd) => {
       throw e
     })
 }
+
+export const handleContact = (data) => {
+  return api
+    .post('/contact', data)
+    .then((res) => {
+      return res.data
+    })
+    .catch((e) => {
+      throw e
+    })
+}

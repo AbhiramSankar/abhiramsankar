@@ -6,7 +6,13 @@
   "main": "./worker/index.js",
 
   "secrets": {
-    "required": ["CONSTRUCTION_PWD"],
+    "required": [
+      "CONSTRUCTION_PWD",
+      "EMAILJS_SERVICE_ID",
+      "EMAILJS_TEMPLATE_ID",
+      "EMAILJS_PUBLIC_KEY",
+      "EMAILJS_PRIVATE_KEY",
+    ],
   },
 
   "assets": {

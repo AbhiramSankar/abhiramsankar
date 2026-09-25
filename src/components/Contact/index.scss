@@ -3,7 +3,8 @@
 .contact {
   position: relative;
   height: 100%;
-  width: 80%;
+  width: 90%;
+  float: right;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -108,11 +109,48 @@
       }
     }
     .contactForm {
+      margin-left: 5%;
       margin-top: 5em;
       form {
         display: flex;
         flex-direction: column;
         gap: 1em;
+        .inputWrapper {
+          display: flex;
+          gap: 1em;
+          width: 100%;
+          input {
+            flex: 1 1 50%;
+          }
+        }
+        input {
+          opacity: 0;
+          animation: fadeInUp 2s 2s;
+          animation-fill-mode: forwards;
+          border: 0;
+          background-color: variables.$primary_25;
+          height: 2em;
+          font-size: 1.25em;
+          color: variables.$tertiary;
+          padding: 0.25em 1em;
+          box-sizing: border-box;
+          border-radius: 0.5em;
+        }
+        textarea {
+          opacity: 0;
+          animation: fadeInUp 2s 2s;
+          animation-fill-mode: forwards;
+          border: 0;
+          background-color: variables.$primary_25;
+          height: 10em;
+          font-size: 1.25em;
+          color: variables.$tertiary;
+          padding: 1em 1em;
+          box-sizing: border-box;
+          border-radius: 0.5em;
+          resize: vertical;
+          max-height: 20em;
+        }
         button {
           display: flex;
           height: 4rem;
@@ -130,6 +168,19 @@
           transition: all 0.5s;
           position: relative;
           overflow: hidden;
+          &.loadBtn {
+            width: 17rem;
+            background-color: variables.$primary;
+            color: variables.$tertiary;
+            svg {
+              transform: translateX(-6rem);
+            }
+            .buttonText {
+              // width: 15px;
+              opacity: 1;
+              transform: translateX(1.5rem);
+            }
+          }
           svg {
             font-size: 1.5rem;
             transform: translateX(0);
@@ -212,6 +263,24 @@
             transform: translateX(1.5rem);
           }
         }
+      }
+    }
+  }
+  .contactInfo {
+    width: 53%;
+    height: 100%;
+    .mapWrapper {
+      background: variables.$secondary_10;
+      float: right;
+      width: 100%;
+      height: 100%;
+      .leaflet-container{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        opacity: 0;
+        animation: backInRight 1s 1.2s;
+        animation-fill-mode: forwards;
       }
     }
   }

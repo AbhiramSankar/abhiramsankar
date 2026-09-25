@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import { persist, createJSONStorage, devtools } from 'zustand/middleware'
-import { verifyMaintPwd } from '../services/mainteneceApi'
+import {verifyMaintPwd} from "../services/apiStore"
 
 const initialState = {
   isLoading: true,

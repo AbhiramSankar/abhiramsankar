@@ -1,3 +1,4 @@
+import handleContact from './api/contact'
 import maintenanceUnlocked from './api/maintenance'
 
 const workerMain = {
@@ -8,6 +9,8 @@ const workerMain = {
     switch (route) {
       case 'POST /api/maintenance/unlock':
         return maintenanceUnlocked(req, env)
+      case 'POST /api/contact':
+        return handleContact(req, env)
       default:
         return Response.json(
           {
