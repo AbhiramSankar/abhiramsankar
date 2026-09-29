@@ -90,6 +90,7 @@
       }
       p {
         margin: 20px 0 45px;
+        text-align: justify;
 
         color: variables.$tertiary_75;
         font-family: variables.$tertiary_font;
@@ -139,6 +140,7 @@
         height: 4rem;
         width: 10rem;
         border: 2px solid variables.$primary;
+        background-color: variables.$tertiary;
         border-radius: 25px;
         color: variables.$primary;
         text-transform: uppercase;

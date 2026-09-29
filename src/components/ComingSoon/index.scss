@@ -65,6 +65,7 @@
         color: variables.$tertiary;
         font-size: clamp(0.75rem, 0.75vw + 1rem, 1.5rem);
         font-weight: 300;
+        text-align: justify;
         min-width: fit-content;
         opacity: 0;
         animation: fadeInDown;
@@ -117,6 +118,7 @@
         display: flex;
         height: 4rem;
         width: 10rem;
+        background-color: variables.$tertiary;
         border: 2px solid variables.$primary;
         border-radius: 25px;
         color: variables.$primary;

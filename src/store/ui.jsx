@@ -9,7 +9,7 @@ const initialState = {
   resumeLink:
     'https://drive.google.com/file/d/13F5uY-9ePlgulioe6iNGgbepZw855NP3/view?usp=sharing',
   portfolioLink:
-    'https://drive.google.com/file/d/1Iv0_vxbgXiXcCd8zwVBjgmNeJjm33zX-/view?usp=sharing',
+    'https://drive.google.com/file/d/1EMX2bYYgXtYjgLRJljt5FWZ5eYo-YIoz/view?usp=sharing',
   sectionCount: {
     '/': 1,
     '/about-me': 1,

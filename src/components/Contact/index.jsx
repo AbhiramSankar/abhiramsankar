@@ -2,25 +2,18 @@ import { useEffect, useState } from 'react'
 import AnimatedLetters from '../UI/AnimatedLetters'
 import './index.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
+import { faBriefcase, faEnvelope, faLocationDot, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 import { useUIStore } from '../../store/ui'
-import { handleContact } from '../../services/apiStore'
-import { Circle, MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
+import Map from '../UI/Map'
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('textAnimate')
   const [formStatus, setFormStatus] = useState(null)
-  const [ontario, setOntario] = useState(null)
 
   const setNotifyContent = useUIStore((state) => state.setNotifyContent)
 
   const contact1Array = 'Contact '.split('')
   const contact2Array = 'Me'.split('')
-  const position = [43.90, -78.86]
-  const mapBounds = [
-    [41.6, -95.2], // southwest
-    [56.9, -74.3], // northeast
-  ]
 
   useEffect(() => {
     setTimeout(() => {
@@ -43,17 +36,6 @@ const Contact = () => {
       }
     }
   }, [formStatus])
-
-  useEffect(() => {
-    fetch('/maps/ontario.geojson')
-      .then((response) => response.json())
-      .then((data) => {
-        setOntario(data)
-      })
-      .catch((error) => {
-        console.error('Unable to load Ontario map:', error)
-      })
-  }, [])
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -157,29 +139,40 @@ const Contact = () => {
         </div>
       </div>
       <div className="contactInfo">
-        <div></div>
+        <div className="contactContainer">
+          <h3 className="contactBoxTitle">Let's Connect</h3>
+
+          <div className="contactDetail">
+            <FontAwesomeIcon icon={faLocationDot} />
+
+            <div>
+              <span>Based in</span>
+              <strong>Oshawa, Ontario, Canada</strong>
+            </div>
+          </div>
+
+          <div className="contactDetail">
+            <FontAwesomeIcon icon={faBriefcase} />
+
+            <div>
+              <span>Currently open to</span>
+              <strong>Full-time, contract & freelance opportunities</strong>
+            </div>
+          </div>
+
+          <div className="contactDetail">
+            <FontAwesomeIcon icon={faEnvelope} />
+
+            <div>
+              <span>Email</span>
+              <a href="abhisan.work@gmail.com">abhisan.work@gmail.com</a>
+            </div>
+          </div>
+
+          <div className="workPreference">Remote • Hybrid • GTA / Ontario</div>
+        </div>
         <div className="mapWrapper">
-          <MapContainer
-            center={position}
-            zoom={7}
-            minZoom={5}
-            maxZoom={15}
-            maxBounds={mapBounds}
-            maxBoundsViscosity={1}
-          >
-            <TileLayer attribution="&copy; OpenStreetMap contributors" url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <Marker position={position}>
-              <Popup>Based in Oshawa, Ontario</Popup>
-            </Marker>
-            <Circle 
-              center={position}
-              radius={100000}
-              pathOptions={{
-                fillOpacity: 0.12,
-                weight: 2
-              }}
-            />
-          </MapContainer>
+          <Map />
         </div>
       </div>
     </div>

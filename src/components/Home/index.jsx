@@ -86,7 +86,7 @@ const Home = () => {
             <span className="buttonText">MORE ABOUT ME</span>
           </a> */}
             <a
-              to={resumeLink}
+              href={resumeLink}
               className="button"
               target="_blank"
               rel="noopener noreferrer"
@@ -95,7 +95,7 @@ const Home = () => {
               <span className="buttonText">QUICK OVERVIEW</span>
             </a>
             <a
-              to={portfolioLink}
+              href={portfolioLink}
               className="button"
               target="_blank"
               rel="noopener noreferrer"
